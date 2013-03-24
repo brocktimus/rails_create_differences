@@ -6,27 +6,25 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "new and save" do
     assert_difference('Category.count') do
-      category = Category.new(full_name: 'root/test')
-      category.save
+      Category.new(full_name: 'root/test').save
     end
   end
 
   test "create" do
     assert_difference('Category.count') do
-      category = Category.create(full_name: 'root/test')
+      Category.create(full_name: 'root/test')
     end
   end
 
   test "where initialize save" do
     assert_difference('Category.count') do
-      category = Category.where(full_name: 'root/test').new
-      category.save
+      Category.where(full_name: 'root/test').new.save
     end
   end
 
   test "where create" do
     assert_difference('Category.count') do
-      category = Category.where(full_name: 'root/test').create
+      Category.where(full_name: 'root/test').create
     end
   end
 

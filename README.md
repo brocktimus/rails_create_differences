@@ -3,6 +3,7 @@ rails_create_differences
 
 Testing differences in rails create methods.
 
+The model unit tests fail on the appropriate code.
 The following code snippet can be run from the rails console to show the problem.
 
 ```ruby
@@ -23,7 +24,7 @@ The problematic line seems to be inheriting the ActiveReocrd::Relation and runni
 
 ```ruby
 # Runs this (basically)
-Category.where(first_name: 'root/foo').where(first_name: 'root').first_or_create
+Category.where(first_name: 'root/bar').where(first_name: 'root').first_or_create
 
 # Instead of this
 Category.where(first_name: 'root').first_or_create
